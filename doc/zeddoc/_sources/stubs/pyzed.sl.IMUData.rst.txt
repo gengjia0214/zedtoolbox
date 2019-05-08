@@ -1,0 +1,44 @@
+IMUData
+=======
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: IMUData
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IMUData.get_angular_velocity
+      ~IMUData.get_angular_velocity_convariance
+      ~IMUData.get_euler_angles
+      ~IMUData.get_linear_acceleration
+      ~IMUData.get_linear_acceleration_convariance
+      ~IMUData.get_orientation
+      ~IMUData.get_orientation_covariance
+      ~IMUData.get_rotation_matrix
+      ~IMUData.get_rotation_vector
+      ~IMUData.get_translation
+      ~IMUData.init_imuData
+      ~IMUData.init_transform
+      ~IMUData.pose_data
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~IMUData.pose_confidence
+      ~IMUData.pose_covariance
+      ~IMUData.timestamp
+      ~IMUData.valid
+   
+   
+
+.. autoclass:: IMUData
+    :members:
+    :undoc-members:
+    :show-inheritance:

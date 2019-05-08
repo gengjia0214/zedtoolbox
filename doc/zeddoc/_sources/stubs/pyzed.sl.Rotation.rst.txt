@@ -1,0 +1,48 @@
+Rotation
+========
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Rotation
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Rotation.get_euler_angles
+      ~Rotation.get_infos
+      ~Rotation.get_orientation
+      ~Rotation.get_rotation_vector
+      ~Rotation.identity
+      ~Rotation.init_angle_translation
+      ~Rotation.init_matrix
+      ~Rotation.init_orientation
+      ~Rotation.init_rotation
+      ~Rotation.inverse
+      ~Rotation.inverse_mat
+      ~Rotation.set_euler_angles
+      ~Rotation.set_identity
+      ~Rotation.set_orientation
+      ~Rotation.set_rotation_vector
+      ~Rotation.set_zeros
+      ~Rotation.transpose
+      ~Rotation.zeros
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Rotation.matrix_name
+      ~Rotation.nbElem
+      ~Rotation.r
+   
+   
+
+.. autoclass:: Rotation
+    :members:
+    :undoc-members:
+    :show-inheritance:

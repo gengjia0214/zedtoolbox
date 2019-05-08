@@ -1,0 +1,25 @@
+MeshFilterParameters
+====================
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: MeshFilterParameters
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MeshFilterParameters.load
+      ~MeshFilterParameters.save
+      ~MeshFilterParameters.set
+   
+
+   
+   
+   
+
+.. autoclass:: MeshFilterParameters
+    :members:
+    :undoc-members:
+    :show-inheritance:

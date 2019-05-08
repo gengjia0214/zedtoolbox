@@ -1,0 +1,55 @@
+Transform
+=========
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Transform
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Transform.get_euler_angles
+      ~Transform.get_infos
+      ~Transform.get_orientation
+      ~Transform.get_rotation_matrix
+      ~Transform.get_rotation_vector
+      ~Transform.get_translation
+      ~Transform.identity
+      ~Transform.init_matrix
+      ~Transform.init_orientation_translation
+      ~Transform.init_rotation_translation
+      ~Transform.init_transform
+      ~Transform.inverse
+      ~Transform.inverse_mat
+      ~Transform.set_euler_angles
+      ~Transform.set_identity
+      ~Transform.set_orientation
+      ~Transform.set_rotation_matrix
+      ~Transform.set_rotation_vector
+      ~Transform.set_sub_matrix3f
+      ~Transform.set_sub_vector3f
+      ~Transform.set_sub_vector4f
+      ~Transform.set_translation
+      ~Transform.set_zeros
+      ~Transform.transpose
+      ~Transform.zeros
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Transform.m
+      ~Transform.matrix_name
+      ~Transform.nbElem
+   
+   
+
+.. autoclass:: Transform
+    :members:
+    :undoc-members:
+    :show-inheritance:

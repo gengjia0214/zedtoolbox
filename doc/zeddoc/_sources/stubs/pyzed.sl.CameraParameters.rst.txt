@@ -1,0 +1,38 @@
+CameraParameters
+================
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: CameraParameters
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CameraParameters.set_disto
+      ~CameraParameters.set_up
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CameraParameters.cx
+      ~CameraParameters.cy
+      ~CameraParameters.d_fov
+      ~CameraParameters.disto
+      ~CameraParameters.fx
+      ~CameraParameters.fy
+      ~CameraParameters.h_fov
+      ~CameraParameters.image_size
+      ~CameraParameters.v_fov
+   
+   
+
+.. autoclass:: CameraParameters
+    :members:
+    :undoc-members:
+    :show-inheritance:

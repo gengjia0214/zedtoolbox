@@ -1,0 +1,27 @@
+DeviceProperties
+================
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: DeviceProperties
+
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DeviceProperties.camera_model
+      ~DeviceProperties.camera_state
+      ~DeviceProperties.id
+      ~DeviceProperties.path
+      ~DeviceProperties.serial_number
+   
+   
+
+.. autoclass:: DeviceProperties
+    :members:
+    :undoc-members:
+    :show-inheritance:

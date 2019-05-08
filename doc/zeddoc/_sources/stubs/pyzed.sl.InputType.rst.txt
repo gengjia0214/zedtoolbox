@@ -1,0 +1,26 @@
+InputType
+=========
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: InputType
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~InputType.set_from_camera_id
+      ~InputType.set_from_serial_number
+      ~InputType.set_from_stream
+      ~InputType.set_from_svo_file
+   
+
+   
+   
+   
+
+.. autoclass:: InputType
+    :members:
+    :undoc-members:
+    :show-inheritance:

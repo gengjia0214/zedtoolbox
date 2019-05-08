@@ -1,0 +1,44 @@
+Mesh
+====
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Mesh
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Mesh.apply_texture
+      ~Mesh.clear
+      ~Mesh.filter
+      ~Mesh.get_gravity_estimate
+      ~Mesh.get_number_of_triangles
+      ~Mesh.get_surrounding_list
+      ~Mesh.get_visible_list
+      ~Mesh.load
+      ~Mesh.merge_chunks
+      ~Mesh.save
+      ~Mesh.update_mesh_from_chunklist
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Mesh.chunks
+      ~Mesh.normals
+      ~Mesh.texture
+      ~Mesh.triangles
+      ~Mesh.uv
+      ~Mesh.vertices
+   
+   
+
+.. autoclass:: Mesh
+    :members:
+    :undoc-members:
+    :show-inheritance:

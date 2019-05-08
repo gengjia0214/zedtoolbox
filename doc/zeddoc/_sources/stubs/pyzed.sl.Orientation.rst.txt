@@ -1,0 +1,36 @@
+Orientation
+===========
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Orientation
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Orientation.get
+      ~Orientation.get_rotation_matrix
+      ~Orientation.identity
+      ~Orientation.init_orientation
+      ~Orientation.init_rotation
+      ~Orientation.init_translation
+      ~Orientation.init_vector
+      ~Orientation.normalize
+      ~Orientation.normalize_orientation
+      ~Orientation.set_identity
+      ~Orientation.set_rotation_matrix
+      ~Orientation.set_zeros
+      ~Orientation.size
+      ~Orientation.zeros
+   
+
+   
+   
+   
+
+.. autoclass:: Orientation
+    :members:
+    :undoc-members:
+    :show-inheritance:

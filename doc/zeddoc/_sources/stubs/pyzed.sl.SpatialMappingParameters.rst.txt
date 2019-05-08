@@ -1,0 +1,41 @@
+SpatialMappingParameters
+========================
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: SpatialMappingParameters
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SpatialMappingParameters.get_range_preset
+      ~SpatialMappingParameters.get_recommended_range
+      ~SpatialMappingParameters.get_resolution_preset
+      ~SpatialMappingParameters.set_range
+      ~SpatialMappingParameters.set_resolution
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SpatialMappingParameters.allowed_range
+      ~SpatialMappingParameters.allowed_resolution
+      ~SpatialMappingParameters.map_type
+      ~SpatialMappingParameters.max_memory_usage
+      ~SpatialMappingParameters.range_meter
+      ~SpatialMappingParameters.resolution_meter
+      ~SpatialMappingParameters.reverse_vertex_order
+      ~SpatialMappingParameters.save_texture
+      ~SpatialMappingParameters.use_chunk_only
+   
+   
+
+.. autoclass:: SpatialMappingParameters
+    :members:
+    :undoc-members:
+    :show-inheritance:

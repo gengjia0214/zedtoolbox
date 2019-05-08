@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pose &mdash; ZED Python API 2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Resolution" href="pyzed.sl.Resolution.html" />
+    <link rel="prev" title="Plane" href="pyzed.sl.Plane.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ZED Python API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../video.html">Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../depth.html">Depth Sensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../positional.html">Positional Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spatial.html">Spatial Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../allclasses.html">All Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CalibrationParameters.html">CalibrationParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CameraInformation.html">CameraInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CameraParameters.html">CameraParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Chunk.html">Chunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.DeviceProperties.html">DeviceProperties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.IMUData.html">IMUData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InitParameters.html">InitParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InputType.html">InputType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Mat.html">Mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix3f.html">Matrix3f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix4f.html">Matrix4f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Mesh.html">Mesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.MeshFilterParameters.html">MeshFilterParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Plane.html">Plane</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Resolution.html">Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Rotation.html">Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.RuntimeParameters.html">RuntimeParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.SpatialMappingParameters.html">SpatialMappingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.TrackingParameters.html">TrackingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Transform.html">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Translation.html">Translation</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ZED Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../allclasses.html">All Classes</a> &raquo;</li>
+        
+      <li>Pose</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/stubs/pyzed.sl.Pose.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pose">
+<h1>Pose<a class="headerlink" href="#pose" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyzed.sl.Pose">
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">Pose</code><a class="headerlink" href="#pyzed.sl.Pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains positional tracking data which gives the position and orientation of the ZED in 3D space.</p>
+<p>Different representations of position and orientation can be retrieved, along with timestamp and pose confidence.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Pose.get_euler_angles" title="pyzed.sl.Pose.get_euler_angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_euler_angles</span></code></a>(self[, radian])</p></td>
+<td><p>Convert the <a class="reference internal" href="pyzed.sl.Rotation.html#pyzed.sl.Rotation" title="pyzed.sl.Rotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rotation</span></code></a> of the <a class="reference internal" href="pyzed.sl.Transform.html#pyzed.sl.Transform" title="pyzed.sl.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></a> as Euler angles.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Pose.get_orientation" title="pyzed.sl.Pose.get_orientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_orientation</span></code></a>(self, …)</p></td>
+<td><p>Returns the orientation from the pose.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Pose.get_rotation_matrix" title="pyzed.sl.Pose.get_rotation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_rotation_matrix</span></code></a>(self, …)</p></td>
+<td><p>Returns the rotation (3x3) from the pose.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Pose.get_rotation_vector" title="pyzed.sl.Pose.get_rotation_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_rotation_vector</span></code></a>(self)</p></td>
+<td><p>Returns the rotation (3x1) rotation vector obtained from 3x3 rotation matrix using Rodrigues formula) from the pose.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Pose.get_translation" title="pyzed.sl.Pose.get_translation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_translation</span></code></a>(self, …)</p></td>
+<td><p>Returns the translation from the pose.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Pose.init_pose" title="pyzed.sl.Pose.init_pose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_pose</span></code></a>(self, Pose pose)</p></td>
+<td><p>Deep copy from another <a class="reference internal" href="#pyzed.sl.Pose" title="pyzed.sl.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Pose.init_transform" title="pyzed.sl.Pose.init_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_transform</span></code></a>(self, Transform pose_data[, …])</p></td>
+<td><p>Inits <a class="reference internal" href="#pyzed.sl.Pose" title="pyzed.sl.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a> from pose data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Pose.pose_data" title="pyzed.sl.Pose.pose_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pose_data</span></code></a>(self, Transform pose_data=Transform())</p></td>
+<td><p>Gets the 4x4 Matrix which contains the rotation (3x3) and the translation.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Pose.pose_confidence" title="pyzed.sl.Pose.pose_confidence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pose_confidence</span></code></a></p></td>
+<td><p>Confidence/Quality of the pose estimation for the target frame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Pose.pose_covariance" title="pyzed.sl.Pose.pose_covariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pose_covariance</span></code></a></p></td>
+<td><p>6x6 Pose covariance of translation (the first 3 values) and rotation in so3 (the last 3 values) (numpy array)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Pose.timestamp" title="pyzed.sl.Pose.timestamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestamp</span></code></a></p></td>
+<td><p>Timestamp of the pose.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Pose.valid" title="pyzed.sl.Pose.valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">valid</span></code></a></p></td>
+<td><p>boolean that indicates if tracking is activated or not.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">Pose</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains positional tracking data which gives the position and orientation of the ZED in 3D space.</p>
+<p>Different representations of position and orientation can be retrieved, along with timestamp and pose confidence.</p>
+<dl class="method">
+<dt id="pyzed.sl.Pose.get_euler_angles">
+<code class="descname">get_euler_angles</code><span class="sig-paren">(</span><em>self</em>, <em>radian=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.get_euler_angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the <a class="reference internal" href="pyzed.sl.Rotation.html#pyzed.sl.Rotation" title="pyzed.sl.Rotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rotation</span></code></a> of the <a class="reference internal" href="pyzed.sl.Transform.html#pyzed.sl.Transform" title="pyzed.sl.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></a> as Euler angles.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>radian</strong> : Define if the angle in is radian or degree. default : true.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The Euler angles, as a float3 representing the rotations arround the X, Y and Z axes. (numpy array)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Pose.get_orientation">
+<code class="descname">get_orientation</code><span class="sig-paren">(</span><em>self</em>, <em>Orientation py_orientation=Orientation()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.get_orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the orientation from the pose.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>py_orientation</strong> : <a class="reference internal" href="pyzed.sl.Orientation.html#pyzed.sl.Orientation" title="pyzed.sl.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a> to be returned. It creates one by default.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The (3x1) orientation vector</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Pose.get_rotation_matrix">
+<code class="descname">get_rotation_matrix</code><span class="sig-paren">(</span><em>self</em>, <em>Rotation py_rotation=Rotation()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.get_rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rotation (3x3) from the pose.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>py_rotation</strong> : <a class="reference internal" href="pyzed.sl.Rotation.html#pyzed.sl.Rotation" title="pyzed.sl.Rotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rotation</span></code></a> to be returned. It creates one by default.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The (3x3) rotation matrix</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The given <a class="reference internal" href="pyzed.sl.Rotation.html#pyzed.sl.Rotation" title="pyzed.sl.Rotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rotation</span></code></a> contains a copy of the <a class="reference internal" href="pyzed.sl.Transform.html#pyzed.sl.Transform" title="pyzed.sl.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></a> values. Not references.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Pose.get_rotation_vector">
+<code class="descname">get_rotation_vector</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.get_rotation_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rotation (3x1) rotation vector obtained from 3x3 rotation matrix using Rodrigues formula) from the pose.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The (3x1) rotation vector (numpy array)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Pose.get_translation">
+<code class="descname">get_translation</code><span class="sig-paren">(</span><em>self</em>, <em>Translation py_translation=Translation()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.get_translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the translation from the pose.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>py_translation</strong> : <a class="reference internal" href="pyzed.sl.Translation.html#pyzed.sl.Translation" title="pyzed.sl.Translation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Translation</span></code></a> to be returned. It creates one by default.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The (3x1) translation vector</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Pose.init_pose">
+<code class="descname">init_pose</code><span class="sig-paren">(</span><em>self</em>, <em>Pose pose</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.init_pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deep copy from another <a class="reference internal" href="#pyzed.sl.Pose" title="pyzed.sl.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a>.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>pose</strong> : the <a class="reference internal" href="#pyzed.sl.Pose" title="pyzed.sl.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a> to copy.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Pose.init_transform">
+<code class="descname">init_transform</code><span class="sig-paren">(</span><em>self</em>, <em>Transform pose_data</em>, <em>mtimestamp=0</em>, <em>mconfidence=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.init_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits <a class="reference internal" href="#pyzed.sl.Pose" title="pyzed.sl.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a> from pose data.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>pose_data</strong> : class:<cite>~pyzed.sl.Transform</cite> containing pose data to copy.</p></li>
+<li><p><strong>mtimestamp</strong> : pose timestamp</p></li>
+<li><p><strong>mconfidence</strong> : pose confidence</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.Pose.pose_confidence">
+<code class="descname">pose_confidence</code><a class="headerlink" href="#pyzed.sl.Pose.pose_confidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Confidence/Quality of the pose estimation for the target frame.</p>
+<p>A confidence metric of the tracking [0-100], 0 means that the tracking is lost, 100 means that the tracking can be fully trusted.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.Pose.pose_covariance">
+<code class="descname">pose_covariance</code><a class="headerlink" href="#pyzed.sl.Pose.pose_covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>6x6 Pose covariance of translation (the first 3 values) and rotation in so3 (the last 3 values) (numpy array)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Computed only if <a class="reference internal" href="pyzed.sl.TrackingParameters.html#pyzed.sl.TrackingParameters.enable_spatial_memory" title="pyzed.sl.TrackingParameters.enable_spatial_memory"><code class="xref py py-data docutils literal notranslate"><span class="pre">enable_spatial_memory</span></code></a> is disabled.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Pose.pose_data">
+<code class="descname">pose_data</code><span class="sig-paren">(</span><em>self</em>, <em>Transform pose_data=Transform()</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Pose.pose_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the 4x4 Matrix which contains the rotation (3x3) and the translation. <a class="reference internal" href="pyzed.sl.Orientation.html#pyzed.sl.Orientation" title="pyzed.sl.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a> is extracted from this transform as well.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>pose_data</strong> : <a class="reference internal" href="pyzed.sl.Transform.html#pyzed.sl.Transform" title="pyzed.sl.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></a> to be returned. It creates one by default.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>the pose data <a class="reference internal" href="pyzed.sl.Transform.html#pyzed.sl.Transform" title="pyzed.sl.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.Pose.timestamp">
+<code class="descname">timestamp</code><a class="headerlink" href="#pyzed.sl.Pose.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Timestamp of the pose. This timestamp should be compared with the camera timestamp for synchronization.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.Pose.valid">
+<code class="descname">valid</code><a class="headerlink" href="#pyzed.sl.Pose.valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>boolean that indicates if tracking is activated or not. You should check that first if something wrong.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyzed.sl.Resolution.html" class="btn btn-neutral float-right" title="Resolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyzed.sl.Plane.html" class="btn btn-neutral float-left" title="Plane" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Stereolabs
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

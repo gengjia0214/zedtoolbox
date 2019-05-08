@@ -1,0 +1,65 @@
+Mat
+===
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Mat
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Mat.alloc_resolution
+      ~Mat.alloc_size
+      ~Mat.clone
+      ~Mat.copy_to
+      ~Mat.free
+      ~Mat.get_channels
+      ~Mat.get_data
+      ~Mat.get_data_type
+      ~Mat.get_height
+      ~Mat.get_infos
+      ~Mat.get_memory_type
+      ~Mat.get_pixel_bytes
+      ~Mat.get_resolution
+      ~Mat.get_step
+      ~Mat.get_step_bytes
+      ~Mat.get_value
+      ~Mat.get_width
+      ~Mat.get_width_bytes
+      ~Mat.init_mat
+      ~Mat.init_mat_cpu
+      ~Mat.init_mat_cpu_gpu
+      ~Mat.init_mat_resolution
+      ~Mat.init_mat_resolution_cpu
+      ~Mat.init_mat_resolution_cpu_gpu
+      ~Mat.init_mat_type
+      ~Mat.is_init
+      ~Mat.is_memory_owner
+      ~Mat.move
+      ~Mat.read
+      ~Mat.set_from
+      ~Mat.set_to
+      ~Mat.set_value
+      ~Mat.swap
+      ~Mat.update_cpu_from_gpu
+      ~Mat.update_gpu_from_cpu
+      ~Mat.write
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Mat.name
+      ~Mat.verbose
+   
+   
+
+.. autoclass:: Mat
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CameraParameters &mdash; ZED Python API 2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chunk" href="pyzed.sl.Chunk.html" />
+    <link rel="prev" title="CameraInformation" href="pyzed.sl.CameraInformation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ZED Python API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../video.html">Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../depth.html">Depth Sensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../positional.html">Positional Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spatial.html">Spatial Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../allclasses.html">All Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CalibrationParameters.html">CalibrationParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CameraInformation.html">CameraInformation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CameraParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Chunk.html">Chunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.DeviceProperties.html">DeviceProperties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.IMUData.html">IMUData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InitParameters.html">InitParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InputType.html">InputType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Mat.html">Mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix3f.html">Matrix3f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix4f.html">Matrix4f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Mesh.html">Mesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.MeshFilterParameters.html">MeshFilterParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Plane.html">Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Pose.html">Pose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Resolution.html">Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Rotation.html">Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.RuntimeParameters.html">RuntimeParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.SpatialMappingParameters.html">SpatialMappingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.TrackingParameters.html">TrackingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Transform.html">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Translation.html">Translation</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ZED Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../allclasses.html">All Classes</a> &raquo;</li>
+        
+      <li>CameraParameters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/stubs/pyzed.sl.CameraParameters.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cameraparameters">
+<h1>CameraParameters<a class="headerlink" href="#cameraparameters" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyzed.sl.CameraParameters">
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">CameraParameters</code><a class="headerlink" href="#pyzed.sl.CameraParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Intrinsic parameters of a camera.</p>
+<p>Those information about the camera will be returned by <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.get_camera_information" title="pyzed.sl.Camera.get_camera_information"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_camera_information()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similar to the <a class="reference internal" href="pyzed.sl.CalibrationParameters.html#pyzed.sl.CalibrationParameters" title="pyzed.sl.CalibrationParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">CalibrationParameters</span></code></a>, those parameters are taken from the settings file (SNXXX.conf) and are modified during the <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.open" title="pyzed.sl.Camera.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> call when running a self-calibration). Those parameters given after <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.open" title="pyzed.sl.Camera.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> call, represent the camera matrix corresponding to rectified or unrectified images.</p>
+<p>When filled with rectified parameters, fx,fy,cx,cy must be the same for Left and Right <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera" title="pyzed.sl.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a> once <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.open" title="pyzed.sl.Camera.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> has been called. Since distortion is corrected during rectification, distortion should not be considered on rectified images.</p>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.set_disto" title="pyzed.sl.CameraParameters.set_disto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_disto</span></code></a>(self, float value1, float value2, …)</p></td>
+<td><p>Sets the elements of the disto array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.set_up" title="pyzed.sl.CameraParameters.set_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_up</span></code></a>(self, float fx_, float fy_, …)</p></td>
+<td><p>Setups the parameter of a camera.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.cx" title="pyzed.sl.CameraParameters.cx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cx</span></code></a></p></td>
+<td><p>Optical center along x axis, defined in pixels (usually close to width/2).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.cy" title="pyzed.sl.CameraParameters.cy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cy</span></code></a></p></td>
+<td><p>Optical center along y axis, defined in pixels (usually close to height/2).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.d_fov" title="pyzed.sl.CameraParameters.d_fov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_fov</span></code></a></p></td>
+<td><p>Diagonal field of view, in degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.disto" title="pyzed.sl.CameraParameters.disto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disto</span></code></a></p></td>
+<td><p>Distortion factor : [ k1, k2, p1, p2, k3 ].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.fx" title="pyzed.sl.CameraParameters.fx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fx</span></code></a></p></td>
+<td><p>Focal length in pixels along x axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.fy" title="pyzed.sl.CameraParameters.fy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fy</span></code></a></p></td>
+<td><p>Focal length in pixels along y axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.h_fov" title="pyzed.sl.CameraParameters.h_fov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">h_fov</span></code></a></p></td>
+<td><p>Horizontal field of view, in degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.image_size" title="pyzed.sl.CameraParameters.image_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">image_size</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.CameraParameters.v_fov" title="pyzed.sl.CameraParameters.v_fov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">v_fov</span></code></a></p></td>
+<td><p>Vertical field of view, in degrees.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">CameraParameters</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Intrinsic parameters of a camera.</p>
+<p>Those information about the camera will be returned by <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.get_camera_information" title="pyzed.sl.Camera.get_camera_information"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_camera_information()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similar to the <a class="reference internal" href="pyzed.sl.CalibrationParameters.html#pyzed.sl.CalibrationParameters" title="pyzed.sl.CalibrationParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">CalibrationParameters</span></code></a>, those parameters are taken from the settings file (SNXXX.conf) and are modified during the <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.open" title="pyzed.sl.Camera.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> call when running a self-calibration). Those parameters given after <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.open" title="pyzed.sl.Camera.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> call, represent the camera matrix corresponding to rectified or unrectified images.</p>
+<p>When filled with rectified parameters, fx,fy,cx,cy must be the same for Left and Right <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera" title="pyzed.sl.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a> once <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera.open" title="pyzed.sl.Camera.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> has been called. Since distortion is corrected during rectification, distortion should not be considered on rectified images.</p>
+</div>
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.cx">
+<code class="descname">cx</code><a class="headerlink" href="#pyzed.sl.CameraParameters.cx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optical center along x axis, defined in pixels (usually close to width/2).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.cy">
+<code class="descname">cy</code><a class="headerlink" href="#pyzed.sl.CameraParameters.cy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optical center along y axis, defined in pixels (usually close to height/2).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.d_fov">
+<code class="descname">d_fov</code><a class="headerlink" href="#pyzed.sl.CameraParameters.d_fov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Diagonal field of view, in degrees.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.disto">
+<code class="descname">disto</code><a class="headerlink" href="#pyzed.sl.CameraParameters.disto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distortion factor : [ k1, k2, p1, p2, k3 ]. Radial (k1,k2,k3) and Tangential (p1,p2) distortion.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.fx">
+<code class="descname">fx</code><a class="headerlink" href="#pyzed.sl.CameraParameters.fx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Focal length in pixels along x axis.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.fy">
+<code class="descname">fy</code><a class="headerlink" href="#pyzed.sl.CameraParameters.fy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Focal length in pixels along y axis.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.h_fov">
+<code class="descname">h_fov</code><a class="headerlink" href="#pyzed.sl.CameraParameters.h_fov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal field of view, in degrees.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.image_size">
+<code class="descname">image_size</code><a class="headerlink" href="#pyzed.sl.CameraParameters.image_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.CameraParameters.set_disto">
+<code class="descname">set_disto</code><span class="sig-paren">(</span><em>self</em>, <em>float value1</em>, <em>float value2</em>, <em>float value3</em>, <em>float value4</em>, <em>float value5</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.CameraParameters.set_disto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the elements of the disto array.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p>float <strong>value1</strong> : k1</p></li>
+<li><p>float <strong>value2</strong> : k2</p></li>
+<li><p>float <strong>value3</strong> : p1</p></li>
+<li><p>float <strong>value4</strong> : p2</p></li>
+<li><p>float <strong>value5</strong> : k3</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.CameraParameters.set_up">
+<code class="descname">set_up</code><span class="sig-paren">(</span><em>self</em>, <em>float fx_</em>, <em>float fy_</em>, <em>float cx_</em>, <em>float cy_</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.CameraParameters.set_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setups the parameter of a camera.</p>
+<p>size in pixels of the images given by the camera.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>fx_</strong> : horizontal focal length.</p></li>
+<li><p><strong>fy_</strong> : vertical focal length.</p></li>
+<li><p><strong>cx_</strong> : horizontal optical center.</p></li>
+<li><p><strong>cy_</strong> : vertical optical center.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.CameraParameters.v_fov">
+<code class="descname">v_fov</code><a class="headerlink" href="#pyzed.sl.CameraParameters.v_fov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical field of view, in degrees.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyzed.sl.Chunk.html" class="btn btn-neutral float-right" title="Chunk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyzed.sl.CameraInformation.html" class="btn btn-neutral float-left" title="CameraInformation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Stereolabs
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

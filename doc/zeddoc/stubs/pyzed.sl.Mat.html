@@ -1,0 +1,964 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mat &mdash; ZED Python API 2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matrix3f" href="pyzed.sl.Matrix3f.html" />
+    <link rel="prev" title="InputType" href="pyzed.sl.InputType.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ZED Python API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../video.html">Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../depth.html">Depth Sensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../positional.html">Positional Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spatial.html">Spatial Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../allclasses.html">All Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CalibrationParameters.html">CalibrationParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CameraInformation.html">CameraInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CameraParameters.html">CameraParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Chunk.html">Chunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.DeviceProperties.html">DeviceProperties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.IMUData.html">IMUData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InitParameters.html">InitParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InputType.html">InputType</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix3f.html">Matrix3f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix4f.html">Matrix4f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Mesh.html">Mesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.MeshFilterParameters.html">MeshFilterParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Plane.html">Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Pose.html">Pose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Resolution.html">Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Rotation.html">Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.RuntimeParameters.html">RuntimeParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.SpatialMappingParameters.html">SpatialMappingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.TrackingParameters.html">TrackingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Transform.html">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Translation.html">Translation</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ZED Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../allclasses.html">All Classes</a> &raquo;</li>
+        
+      <li>Mat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/stubs/pyzed.sl.Mat.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mat">
+<h1>Mat<a class="headerlink" href="#mat" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyzed.sl.Mat">
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">Mat</code><a class="headerlink" href="#pyzed.sl.Mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> class can handle multiple matrix format from 1 to 4 channels, with different value types (float or uchar), and can be stored CPU and/or GPU side.</p>
+<p><a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is defined in a row-major order, it means that, for an image buffer, the entire first row is stored first, followed by the entire second row, and so on.</p>
+<p>The CPU and GPU buffer aren’t automatically synchronized for performance reasons, you can use updateCPUfromGPU / updateGPUfromCPU to do it. If you are using the GPU side of the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> object, you need to make sure to call free before destroying the <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera" title="pyzed.sl.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a> object. The destruction of the <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera" title="pyzed.sl.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a> object delete the CUDA context needed to free the GPU <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> memory.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.alloc_resolution" title="pyzed.sl.Mat.alloc_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alloc_resolution</span></code></a>(self, …[, memory_type])</p></td>
+<td><p>Allocates the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.alloc_size" title="pyzed.sl.Mat.alloc_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alloc_size</span></code></a>(self, width, height, mat_type[, …])</p></td>
+<td><p>Allocates the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> memory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.clone" title="pyzed.sl.Mat.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone</span></code></a>(self, Mat py_mat)</p></td>
+<td><p>Duplicates <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> by copy (deep copy).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.copy_to" title="pyzed.sl.Mat.copy_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy_to</span></code></a>(self, Mat dst=Mat()[, cpy_type])</p></td>
+<td><p>Copies data to another <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (deep copy).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.free" title="pyzed.sl.Mat.free"><code class="xref py py-obj docutils literal notranslate"><span class="pre">free</span></code></a>(self[, memory_type])</p></td>
+<td><p>Free the owned memory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_channels" title="pyzed.sl.Mat.get_channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_channels</span></code></a>(self)</p></td>
+<td><p>Returns the number of values stored in one pixel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_data" title="pyzed.sl.Mat.get_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data</span></code></a>(self[, memory_type])</p></td>
+<td><p>Copies the data of the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> in a numpy array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_data_type" title="pyzed.sl.Mat.get_data_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data_type</span></code></a>(self)</p></td>
+<td><p>Returns the format of the matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_height" title="pyzed.sl.Mat.get_height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_height</span></code></a>(self)</p></td>
+<td><p>Returns the height of the matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_infos" title="pyzed.sl.Mat.get_infos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_infos</span></code></a>(self)</p></td>
+<td><p>Returns the informations about the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> into a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_memory_type" title="pyzed.sl.Mat.get_memory_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_memory_type</span></code></a>(self)</p></td>
+<td><p>Returns the format of the matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_pixel_bytes" title="pyzed.sl.Mat.get_pixel_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pixel_bytes</span></code></a>(self)</p></td>
+<td><p>Returns the size in bytes of one pixel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_resolution" title="pyzed.sl.Mat.get_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_resolution</span></code></a>(self)</p></td>
+<td><p>Returns the resolution of the matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_step" title="pyzed.sl.Mat.get_step"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_step</span></code></a>(self[, memory_type])</p></td>
+<td><p>Returns the memory step in number of elements (the number of values in one pixel row).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_step_bytes" title="pyzed.sl.Mat.get_step_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_step_bytes</span></code></a>(self[, memory_type])</p></td>
+<td><p>Returns the memory step in Bytes (the Bytes size of one pixel row).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_value" title="pyzed.sl.Mat.get_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_value</span></code></a>(self, x, y[, memory_type])</p></td>
+<td><p>Returns the value of a specific point in the matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_width" title="pyzed.sl.Mat.get_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_width</span></code></a>(self)</p></td>
+<td><p>Returns the width of the matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.get_width_bytes" title="pyzed.sl.Mat.get_width_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_width_bytes</span></code></a>(self)</p></td>
+<td><p>Returns the size in bytes of a row.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.init_mat" title="pyzed.sl.Mat.init_mat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_mat</span></code></a>(self, Mat matrix)</p></td>
+<td><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> by copy (shallow copy).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.init_mat_cpu" title="pyzed.sl.Mat.init_mat_cpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_mat_cpu</span></code></a>(self, width, height, mat_type, …)</p></td>
+<td><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from an existing data pointer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.init_mat_cpu_gpu" title="pyzed.sl.Mat.init_mat_cpu_gpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_mat_cpu_gpu</span></code></a>(self, width, height, …)</p></td>
+<td><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from two existing data pointers, CPU and GPU.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.init_mat_resolution" title="pyzed.sl.Mat.init_mat_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_mat_resolution</span></code></a>(self, …)</p></td>
+<td><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.init_mat_resolution_cpu" title="pyzed.sl.Mat.init_mat_resolution_cpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_mat_resolution_cpu</span></code></a>(self, …[, memory_type])</p></td>
+<td><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from an existing data pointer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.init_mat_resolution_cpu_gpu" title="pyzed.sl.Mat.init_mat_resolution_cpu_gpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_mat_resolution_cpu_gpu</span></code></a>(self, …)</p></td>
+<td><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from two existing data pointers, CPU and GPU.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.init_mat_type" title="pyzed.sl.Mat.init_mat_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_mat_type</span></code></a>(self, width, height, mat_type)</p></td>
+<td><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.is_init" title="pyzed.sl.Mat.is_init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_init</span></code></a>(self)</p></td>
+<td><p>Defines whether the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is initialized or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.is_memory_owner" title="pyzed.sl.Mat.is_memory_owner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_memory_owner</span></code></a>(self)</p></td>
+<td><p>Returns whether the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is the owner of the memory it access.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.move" title="pyzed.sl.Mat.move"><code class="xref py py-obj docutils literal notranslate"><span class="pre">move</span></code></a>(self, Mat py_mat)</p></td>
+<td><p>Moves Mat data to another <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.read" title="pyzed.sl.Mat.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(self, str filepath)</p></td>
+<td><p>Reads an image from a file (only if <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> is available on the current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.set_from" title="pyzed.sl.Mat.set_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_from</span></code></a>(self, Mat src=Mat()[, cpy_type])</p></td>
+<td><p>Copies data from an other <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (deep copy).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.set_to" title="pyzed.sl.Mat.set_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_to</span></code></a>(self, value[, memory_type])</p></td>
+<td><p>Fills the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> with the given value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.set_value" title="pyzed.sl.Mat.set_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_value</span></code></a>(self, x, y, value[, memory_type])</p></td>
+<td><p>Sets a value to a specific point in the matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.swap" title="pyzed.sl.Mat.swap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swap</span></code></a>(self, Mat mat1, Mat mat2)</p></td>
+<td><p>Swaps the content of the provided <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (only swaps the pointers, no data copy).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.update_cpu_from_gpu" title="pyzed.sl.Mat.update_cpu_from_gpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_cpu_from_gpu</span></code></a>(self)</p></td>
+<td><p>Downloads data from DEVICE (GPU) to HOST (CPU), if possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.update_gpu_from_cpu" title="pyzed.sl.Mat.update_gpu_from_cpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_gpu_from_cpu</span></code></a>(self)</p></td>
+<td><p>Downloads data from HOST (CPU) to DEVICE (GPU), if possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.write" title="pyzed.sl.Mat.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(self, str filepath)</p></td>
+<td><p>Writes the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (only if <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> is available) into a file as an image.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.Mat.name" title="pyzed.sl.Mat.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p>The name of the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (optional)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.Mat.verbose" title="pyzed.sl.Mat.verbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verbose</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">Mat</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> class can handle multiple matrix format from 1 to 4 channels, with different value types (float or uchar), and can be stored CPU and/or GPU side.</p>
+<p><a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is defined in a row-major order, it means that, for an image buffer, the entire first row is stored first, followed by the entire second row, and so on.</p>
+<p>The CPU and GPU buffer aren’t automatically synchronized for performance reasons, you can use updateCPUfromGPU / updateGPUfromCPU to do it. If you are using the GPU side of the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> object, you need to make sure to call free before destroying the <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera" title="pyzed.sl.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a> object. The destruction of the <a class="reference internal" href="pyzed.sl.Camera.html#pyzed.sl.Camera" title="pyzed.sl.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a> object delete the CUDA context needed to free the GPU <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> memory.</p>
+<dl class="method">
+<dt id="pyzed.sl.Mat.alloc_resolution">
+<code class="descname">alloc_resolution</code><span class="sig-paren">(</span><em>self</em>, <em>Resolution resolution</em>, <em>mat_type</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.alloc_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocates the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>resolution</strong>  : the size of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>memory_type</strong> : defines where the buffer will be stored. (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> and/or <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It erases previously allocated memory.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.alloc_size">
+<code class="descname">alloc_size</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>height</em>, <em>mat_type</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.alloc_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocates the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>width</strong>   : width of the matrix in pixels.</p></li>
+<li><p><strong>height</strong>  : height of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>memory_type</strong> : defines where the buffer will be stored. (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> and/or <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It erases previously allocated memory.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><em>self</em>, <em>Mat py_mat</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> by copy (deep copy).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>py_mat</strong> : the reference to the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> to copy. This function copies the data array(s), it mark the new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> as the memory owner.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.copy_to">
+<code class="descname">copy_to</code><span class="sig-paren">(</span><em>self</em>, <em>Mat dst=Mat()</em>, <em>cpy_type=COPY_TYPE.COPY_TYPE_CPU_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.copy_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies data to another <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (deep copy).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>dst</strong> : the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> where the data will be copied.</p></li>
+<li><p><strong>cpy_type</strong> : specify the memories that will be used for the copy.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The <strong>dst</strong> <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the destination is not allocated or has a not a compatible <a class="reference internal" href="../core.html#pyzed.sl.MAT_TYPE" title="pyzed.sl.MAT_TYPE"><code class="xref py py-class docutils literal notranslate"><span class="pre">MAT_TYPE</span></code></a> or <a class="reference internal" href="pyzed.sl.Resolution.html#pyzed.sl.Resolution" title="pyzed.sl.Resolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Resolution</span></code></a>, current memory is freed and new memory is directly allocated.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.free">
+<code class="descname">free</code><span class="sig-paren">(</span><em>self</em>, <em>memory_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.free" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free the owned memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>memory_type</strong> : specify whether you want to free the <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> and/or <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code> memory. If None, it frees both CPU and GPU memory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_channels">
+<code class="descname">get_channels</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of values stored in one pixel.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The number of values in a pixel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>self</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the data of the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> in a numpy array.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>memory_type</strong> : defines which memory should be read.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>A numpy array containing the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_data_type">
+<code class="descname">get_data_type</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_data_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the format of the matrix.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The format of the current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_height">
+<code class="descname">get_height</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the height of the matrix.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The height of the matrix in pixels.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_infos">
+<code class="descname">get_infos</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the informations about the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> into a string.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>A string containing the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> informations.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_memory_type">
+<code class="descname">get_memory_type</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_memory_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the format of the matrix.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The format of the current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_pixel_bytes">
+<code class="descname">get_pixel_bytes</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_pixel_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size in bytes of one pixel.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The size in bytes of a pixel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_resolution">
+<code class="descname">get_resolution</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the resolution of the matrix.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The resolution of the matrix in pixels.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_step">
+<code class="descname">get_step</code><span class="sig-paren">(</span><em>self</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the memory step in number of elements (the number of values in one pixel row).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>memory_type</strong> : specify whether you want <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> or <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code> step.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The step in number of elements.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_step_bytes">
+<code class="descname">get_step_bytes</code><span class="sig-paren">(</span><em>self</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_step_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the memory step in Bytes (the Bytes size of one pixel row).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>memory_type</strong> : specify whether you want <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> or <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code> step.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The step in bytes of the specified memory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>self</em>, <em>x</em>, <em>y</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of a specific point in the matrix.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>x</strong>   : specify the column</p></li>
+<li><p><strong>y</strong>   : specify the row</p></li>
+<li><p><strong>memory_type</strong> : defines which memory should be read.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">SUCCESS</span></code> if everything went well, <code class="xref py py-data docutils literal notranslate"><span class="pre">ERROR_CODE_FAILURE</span></code> otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not efficient for MEM_GPU, use it on sparse data.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_width">
+<code class="descname">get_width</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the width of the matrix.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The width of the matrix in pixels.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.get_width_bytes">
+<code class="descname">get_width_bytes</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.get_width_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size in bytes of a row.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>The size in bytes of a row.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.init_mat">
+<code class="descname">init_mat</code><span class="sig-paren">(</span><em>self</em>, <em>Mat matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.init_mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> by copy (shallow copy).</p>
+<p>This function doesn’t allocate the memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>mat</strong> : the reference to the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> to copy.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.init_mat_cpu">
+<code class="descname">init_mat_cpu</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>height</em>, <em>mat_type</em>, <em>ptr</em>, <em>step</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.init_mat_cpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from an existing data pointer.</p>
+<p>This function doesn’t allocate the memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>width</strong>   : width of the matrix in pixels.</p></li>
+<li><p><strong>height</strong>  : height of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>ptr</strong> : pointer to the data array. (CPU or GPU).</p></li>
+<li><p><strong>step</strong>    : step of the data array. (the Bytes size of one pixel row).</p></li>
+<li><p><strong>memory_type</strong> : defines where the buffer will be stored. (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> and/or (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.init_mat_cpu_gpu">
+<code class="descname">init_mat_cpu_gpu</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>height</em>, <em>mat_type</em>, <em>ptr_cpu</em>, <em>step_cpu</em>, <em>ptr_gpu</em>, <em>step_gpu</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.init_mat_cpu_gpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from two existing data pointers, CPU and GPU.</p>
+<p>This function doesn’t allocate the memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>width</strong>   : width of the matrix in pixels.</p></li>
+<li><p><strong>height</strong>  : height of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>ptr_cpu</strong> : CPU pointer to the data array.</p></li>
+<li><p><strong>step_cpu</strong>    : step of the CPU data array (the Bytes size of one pixel row).</p></li>
+<li><p><strong>ptr_gpu</strong> : GPU pointer to the data array.</p></li>
+<li><p><strong>step_gpu</strong>    : step of the GPU data array (the Bytes size of one pixel row).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.init_mat_resolution">
+<code class="descname">init_mat_resolution</code><span class="sig-paren">(</span><em>self</em>, <em>Resolution resolution</em>, <em>mat_type</em>, <em>memory_type</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.init_mat_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p>
+<p>This function directly allocates the requested memory. It calls <a class="reference internal" href="#pyzed.sl.Mat.alloc_resolution" title="pyzed.sl.Mat.alloc_resolution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">alloc_resolution()</span></code></a>.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>resolution</strong>  : the size of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>memory_type</strong> : defines where the buffer will be stored (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> and/or <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.init_mat_resolution_cpu">
+<code class="descname">init_mat_resolution_cpu</code><span class="sig-paren">(</span><em>self</em>, <em>Resolution resolution</em>, <em>mat_type</em>, <em>ptr</em>, <em>step</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.init_mat_resolution_cpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from an existing data pointer.</p>
+<p>This function doesn’t allocate the memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>resolution</strong>  : the size of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>ptr</strong> : pointer to the data array. (CPU or GPU).</p></li>
+<li><p><strong>step</strong>    : step of the data array. (the Bytes size of one pixel row).</p></li>
+<li><p><strong>memory_type</strong> : defines where the buffer will be stored. (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> and/or (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.init_mat_resolution_cpu_gpu">
+<code class="descname">init_mat_resolution_cpu_gpu</code><span class="sig-paren">(</span><em>self</em>, <em>Resolution resolution</em>, <em>mat_type</em>, <em>ptr_cpu</em>, <em>step_cpu</em>, <em>ptr_gpu</em>, <em>step_gpu</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.init_mat_resolution_cpu_gpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> from two existing data pointers, CPU and GPU.</p>
+<p>This function doesn’t allocate the memory.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>resolution</strong>  : the size of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>ptr_cpu</strong> : CPU pointer to the data array.</p></li>
+<li><p><strong>step_cpu</strong>    : step of the CPU data array (the Bytes size of one pixel row).</p></li>
+<li><p><strong>ptr_gpu</strong> : GPU pointer to the data array.</p></li>
+<li><p><strong>step_gpu</strong>    : step of the GPU data array (the Bytes size of one pixel row).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.init_mat_type">
+<code class="descname">init_mat_type</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>height</em>, <em>mat_type</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.init_mat_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inits a new <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p>
+<p>This function directly allocates the requested memory. It calls <a class="reference internal" href="#pyzed.sl.Mat.alloc_size" title="pyzed.sl.Mat.alloc_size"><code class="xref py py-meth docutils literal notranslate"><span class="pre">alloc_size()</span></code></a>.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>width</strong>   : width of the matrix in pixels.</p></li>
+<li><p><strong>height</strong>  : height of the matrix in pixels.</p></li>
+<li><p><strong>mat_type</strong>    : the type of the matrix (<code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_32F_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code>…).</p></li>
+<li><p><strong>memory_type</strong> : defines where the buffer will be stored. (<code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> and/or <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_GPU</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.is_init">
+<code class="descname">is_init</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.is_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines whether the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is initialized or not.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>True if current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> has been allocated (by the constructor or therefore).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.is_memory_owner">
+<code class="descname">is_memory_owner</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.is_memory_owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is the owner of the memory it access.</p>
+<p>If not, the memory won’t be freed if the Mat is destroyed.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>True if the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is owning its memory, else false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>self</em>, <em>Mat py_mat</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves Mat data to another <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p>
+<p>This function gives the attribute of the current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> to the specified one. (No copy).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>py_mat</strong> : the reference to the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> to move.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>: the current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is then no more usable since its loose its attributes.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.Mat.name">
+<code class="descname">name</code><a class="headerlink" href="#pyzed.sl.Mat.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (optional)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>self</em>, <em>str filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads an image from a file (only if <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> is available on the current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>).</p>
+<p>Supported input files format are PNG and JPEG.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>filepath</strong> : file path including the name and extension.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">SUCCESS</span></code> if everything went well, <code class="xref py py-data docutils literal notranslate"><span class="pre">ERROR_CODE_FAILURE</span></code> otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Supported <a class="reference internal" href="../core.html#pyzed.sl.MAT_TYPE" title="pyzed.sl.MAT_TYPE"><code class="xref py py-class docutils literal notranslate"><span class="pre">MAT_TYPE</span></code></a> are : <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C3</span></code> and <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.set_from">
+<code class="descname">set_from</code><span class="sig-paren">(</span><em>self</em>, <em>Mat src=Mat()</em>, <em>cpy_type=COPY_TYPE.COPY_TYPE_CPU_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.set_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies data from an other <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (deep copy).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>src</strong> : the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> where the data will be copied from.</p></li>
+<li><p><strong>cpy_type</strong> : specify the memories that will be used for the update.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">SUCCESS</span></code> if everything went well, <code class="xref py py-data docutils literal notranslate"><span class="pre">ERROR_CODE_FAILURE</span></code> otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the current <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> is not allocated or has a not a compatible <a class="reference internal" href="../core.html#pyzed.sl.MAT_TYPE" title="pyzed.sl.MAT_TYPE"><code class="xref py py-class docutils literal notranslate"><span class="pre">MAT_TYPE</span></code></a> or <a class="reference internal" href="pyzed.sl.Resolution.html#pyzed.sl.Resolution" title="pyzed.sl.Resolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Resolution</span></code></a> with the source, current memory is freed and new memory is directly allocated.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.set_to">
+<code class="descname">set_to</code><span class="sig-paren">(</span><em>self</em>, <em>value</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.set_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fills the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> with the given value.</p>
+<p>This function overwrite all the matrix.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>value</strong>   : the value to be copied all over the matrix.</p></li>
+<li><p><strong>memory_type</strong> : defines which buffer to fill, CPU and/or GPU.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.set_value">
+<code class="descname">set_value</code><span class="sig-paren">(</span><em>self</em>, <em>x</em>, <em>y</em>, <em>value</em>, <em>memory_type=MEM.MEM_CPU</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a value to a specific point in the matrix.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>x</strong>   : specify the column.</p></li>
+<li><p><strong>y</strong>   : specify the row.</p></li>
+<li><p><strong>value</strong>   : the value to be set.</p></li>
+<li><p><strong>memory_type</strong> : defines which memory will be updated.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">SUCCESS</span></code> if everything went well, <code class="xref py py-data docutils literal notranslate"><span class="pre">ERROR_CODE_FAILURE</span></code> otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not efficient for MEM_GPU, use it on sparse data.</p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyzed.sl.Mat.swap">
+<em class="property">static </em><code class="descname">swap</code><span class="sig-paren">(</span><em>self</em>, <em>Mat mat1</em>, <em>Mat mat2</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.swap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Swaps the content of the provided <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (only swaps the pointers, no data copy).</p>
+<p>This function swaps the pointers of the given <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>mat1</strong>    : the first mat.</p></li>
+<li><p><strong>mat2</strong>    : the second mat.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.update_cpu_from_gpu">
+<code class="descname">update_cpu_from_gpu</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.update_cpu_from_gpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads data from DEVICE (GPU) to HOST (CPU), if possible.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">SUCCESS</span></code> if everything went well, <code class="xref py py-data docutils literal notranslate"><span class="pre">ERROR_CODE_FAILURE</span></code> otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no CPU or GPU memory are available for this <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>, some are directly allocated.
+If verbose sets, you have informations in case of failure.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.update_gpu_from_cpu">
+<code class="descname">update_gpu_from_cpu</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.update_gpu_from_cpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads data from HOST (CPU) to DEVICE (GPU), if possible.</p>
+<dl class="simple">
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">SUCCESS</span></code> if everything went well, <code class="xref py py-data docutils literal notranslate"><span class="pre">ERROR_CODE_FAILURE</span></code> otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no CPU or GPU memory are available for this <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a>, some are directly allocated.
+If verbose sets, you have informations in case of failure.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.Mat.verbose">
+<code class="descname">verbose</code><a class="headerlink" href="#pyzed.sl.Mat.verbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.Mat.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>self</em>, <em>str filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.Mat.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the <a class="reference internal" href="#pyzed.sl.Mat" title="pyzed.sl.Mat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mat</span></code></a> (only if <code class="xref py py-data docutils literal notranslate"><span class="pre">MEM_CPU</span></code> is available) into a file as an image.</p>
+<p>Supported output files format are PNG and JPEG.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>filepath</strong> : file path including the name and extension.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><p><code class="xref py py-data docutils literal notranslate"><span class="pre">SUCCESS</span></code> if everything went well, <code class="xref py py-data docutils literal notranslate"><span class="pre">ERROR_CODE_FAILURE</span></code> otherwise.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Supported <a class="reference internal" href="../core.html#pyzed.sl.MAT_TYPE" title="pyzed.sl.MAT_TYPE"><code class="xref py py-class docutils literal notranslate"><span class="pre">MAT_TYPE</span></code></a> are : <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C1</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C3</span></code> and <code class="xref py py-data docutils literal notranslate"><span class="pre">MAT_TYPE_8U_C4</span></code></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyzed.sl.Matrix3f.html" class="btn btn-neutral float-right" title="Matrix3f" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyzed.sl.InputType.html" class="btn btn-neutral float-left" title="InputType" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Stereolabs
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

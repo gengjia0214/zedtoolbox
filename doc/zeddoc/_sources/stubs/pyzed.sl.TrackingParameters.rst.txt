@@ -1,0 +1,36 @@
+TrackingParameters
+==================
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: TrackingParameters
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TrackingParameters.initial_world_transform
+      ~TrackingParameters.load
+      ~TrackingParameters.save
+      ~TrackingParameters.set_initial_world_transform
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TrackingParameters.area_file_path
+      ~TrackingParameters.enable_imu_fusion
+      ~TrackingParameters.enable_pose_smoothing
+      ~TrackingParameters.enable_spatial_memory
+      ~TrackingParameters.set_floor_as_origin
+   
+   
+
+.. autoclass:: TrackingParameters
+    :members:
+    :undoc-members:
+    :show-inheritance:

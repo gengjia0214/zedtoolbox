@@ -1,0 +1,28 @@
+CameraInformation
+=================
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: CameraInformation
+
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CameraInformation.calibration_parameters
+      ~CameraInformation.calibration_parameters_raw
+      ~CameraInformation.camera_imu_transform
+      ~CameraInformation.camera_model
+      ~CameraInformation.firmware_version
+      ~CameraInformation.serial_number
+   
+   
+
+.. autoclass:: CameraInformation
+    :members:
+    :undoc-members:
+    :show-inheritance:

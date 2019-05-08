@@ -1,0 +1,39 @@
+Pose
+====
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Pose
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Pose.get_euler_angles
+      ~Pose.get_orientation
+      ~Pose.get_rotation_matrix
+      ~Pose.get_rotation_vector
+      ~Pose.get_translation
+      ~Pose.init_pose
+      ~Pose.init_transform
+      ~Pose.pose_data
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Pose.pose_confidence
+      ~Pose.pose_covariance
+      ~Pose.timestamp
+      ~Pose.valid
+   
+   
+
+.. autoclass:: Pose
+    :members:
+    :undoc-members:
+    :show-inheritance:

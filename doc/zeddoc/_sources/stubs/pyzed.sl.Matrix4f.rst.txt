@@ -1,0 +1,42 @@
+Matrix4f
+========
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Matrix4f
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Matrix4f.get_infos
+      ~Matrix4f.identity
+      ~Matrix4f.init_matrix
+      ~Matrix4f.inverse
+      ~Matrix4f.inverse_mat
+      ~Matrix4f.set_identity
+      ~Matrix4f.set_sub_matrix3f
+      ~Matrix4f.set_sub_vector3f
+      ~Matrix4f.set_sub_vector4f
+      ~Matrix4f.set_zeros
+      ~Matrix4f.transpose
+      ~Matrix4f.zeros
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Matrix4f.m
+      ~Matrix4f.matrix_name
+      ~Matrix4f.nbElem
+   
+   
+
+.. autoclass:: Matrix4f
+    :members:
+    :undoc-members:
+    :show-inheritance:

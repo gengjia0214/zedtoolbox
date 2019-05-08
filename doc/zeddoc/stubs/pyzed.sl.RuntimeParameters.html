@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RuntimeParameters &mdash; ZED Python API 2.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SpatialMappingParameters" href="pyzed.sl.SpatialMappingParameters.html" />
+    <link rel="prev" title="Rotation" href="pyzed.sl.Rotation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ZED Python API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../video.html">Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../depth.html">Depth Sensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../positional.html">Positional Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spatial.html">Spatial Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../allclasses.html">All Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CalibrationParameters.html">CalibrationParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CameraInformation.html">CameraInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.CameraParameters.html">CameraParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Chunk.html">Chunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.DeviceProperties.html">DeviceProperties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.IMUData.html">IMUData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InitParameters.html">InitParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.InputType.html">InputType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Mat.html">Mat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix3f.html">Matrix3f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Matrix4f.html">Matrix4f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Mesh.html">Mesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.MeshFilterParameters.html">MeshFilterParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Plane.html">Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Pose.html">Pose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Resolution.html">Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Rotation.html">Rotation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RuntimeParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.SpatialMappingParameters.html">SpatialMappingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.TrackingParameters.html">TrackingParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Transform.html">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyzed.sl.Translation.html">Translation</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ZED Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../allclasses.html">All Classes</a> &raquo;</li>
+        
+      <li>RuntimeParameters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/stubs/pyzed.sl.RuntimeParameters.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="runtimeparameters">
+<h1>RuntimeParameters<a class="headerlink" href="#runtimeparameters" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyzed.sl.RuntimeParameters">
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">RuntimeParameters</code><a class="headerlink" href="#pyzed.sl.RuntimeParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parameters that defines the behavior of the grab.</p>
+<p>Default values are enabled.
+You can customize it to fit your application and then save it to create a preset that can be loaded for further executions.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.RuntimeParameters.load" title="pyzed.sl.RuntimeParameters.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(self, str filename)</p></td>
+<td><p>Loads the values of the parameters contained in a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.RuntimeParameters.save" title="pyzed.sl.RuntimeParameters.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(self, str filename)</p></td>
+<td><p>Saves the current set of parameters into a file.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.RuntimeParameters.enable_depth" title="pyzed.sl.RuntimeParameters.enable_depth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable_depth</span></code></a></p></td>
+<td><p>Defines if the depth map should be computed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyzed.sl.RuntimeParameters.measure3D_reference_frame" title="pyzed.sl.RuntimeParameters.measure3D_reference_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">measure3D_reference_frame</span></code></a></p></td>
+<td><p>Provides 3D measures (point cloud and normals) in the desired reference frame (default is <code class="xref py py-data docutils literal notranslate"><span class="pre">REFERENCE_FRAME_CAMERA</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyzed.sl.RuntimeParameters.sensing_mode" title="pyzed.sl.RuntimeParameters.sensing_mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sensing_mode</span></code></a></p></td>
+<td><p>Defines the algorithm used for depth map computation, more info : <a class="reference internal" href="../depth.html#pyzed.sl.SENSING_MODE" title="pyzed.sl.SENSING_MODE"><code class="xref py py-class docutils literal notranslate"><span class="pre">SENSING_MODE</span></code></a> definition.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyzed.sl.</code><code class="descname">RuntimeParameters</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Parameters that defines the behavior of the grab.</p>
+<p>Default values are enabled.
+You can customize it to fit your application and then save it to create a preset that can be loaded for further executions.</p>
+<dl class="attribute">
+<dt id="pyzed.sl.RuntimeParameters.enable_depth">
+<code class="descname">enable_depth</code><a class="headerlink" href="#pyzed.sl.RuntimeParameters.enable_depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines if the depth map should be computed.</p>
+<p>If false, only the images are available.</p>
+<p>default : true</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.RuntimeParameters.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>self</em>, <em>str filename</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.RuntimeParameters.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the values of the parameters contained in a file.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>filename</strong> : the path to the file from which the parameters will be loaded.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>true if the file was successfully loaded, otherwise false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.RuntimeParameters.measure3D_reference_frame">
+<code class="descname">measure3D_reference_frame</code><a class="headerlink" href="#pyzed.sl.RuntimeParameters.measure3D_reference_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides 3D measures (point cloud and normals) in the desired reference frame (default is <code class="xref py py-data docutils literal notranslate"><span class="pre">REFERENCE_FRAME_CAMERA</span></code>)</p>
+<p>default : <code class="xref py py-data docutils literal notranslate"><span class="pre">REFERENCE_FRAME_CAMERA</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>: replaces previous move_point_cloud_to_world_frame parameter.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyzed.sl.RuntimeParameters.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>self</em>, <em>str filename</em><span class="sig-paren">)</span><a class="headerlink" href="#pyzed.sl.RuntimeParameters.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current set of parameters into a file.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p><strong>filename</strong>  : the path to the file in which the parameters will be stored.</p></li>
+</ul>
+</dd>
+<dt><strong>Returns</strong></dt><dd><ul class="simple">
+<li><p>true if the file was successfully saved, otherwise false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyzed.sl.RuntimeParameters.sensing_mode">
+<code class="descname">sensing_mode</code><a class="headerlink" href="#pyzed.sl.RuntimeParameters.sensing_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the algorithm used for depth map computation, more info : <a class="reference internal" href="../depth.html#pyzed.sl.SENSING_MODE" title="pyzed.sl.SENSING_MODE"><code class="xref py py-class docutils literal notranslate"><span class="pre">SENSING_MODE</span></code></a> definition.</p>
+<p>default : <code class="xref py py-data docutils literal notranslate"><span class="pre">SENSING_MODE_STANDARD</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyzed.sl.SpatialMappingParameters.html" class="btn btn-neutral float-right" title="SpatialMappingParameters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyzed.sl.Rotation.html" class="btn btn-neutral float-left" title="Rotation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Stereolabs
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+Chunk
+=====
+
+.. currentmodule:: pyzed.sl
+
+.. autoclass:: Chunk
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Chunk.clear
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Chunk.barycenter
+      ~Chunk.has_been_updated
+      ~Chunk.normals
+      ~Chunk.timestamp
+      ~Chunk.triangles
+      ~Chunk.uv
+      ~Chunk.vertices
+   
+   
+
+.. autoclass:: Chunk
+    :members:
+    :undoc-members:
+    :show-inheritance:
