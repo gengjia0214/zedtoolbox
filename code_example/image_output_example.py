@@ -1,5 +1,4 @@
 import pyzed.sl as sl
-import numpy as np
 import cv2
 
 
@@ -30,14 +29,18 @@ def main():
     print("  Save the current image:     s")
     print("  Quit the video reading:     q\n")
     while key != 113:  # for 'q' key
+        # grab() will compute the current image and put the data into memory
+        # the pointer will proceed one frame after each time this method is called
         err = cam.grab(runtime)
         if err == sl.ERROR_CODE.SUCCESS:
+            # retrieve_image would put the data of a certain channel into the mat structure
+            # default is the left view
             cam.retrieve_image(mat)
             cv2.imshow("ZED", mat.get_data())
-            key = cv2.waitKey(1)
+            key = cv2.waitKey(10000)
             saving_image(key, mat)
         else:
-            key = cv2.waitKey(1)
+            key = cv2.waitKey(100)
     cv2.destroyAllWindows()
 
     # print the camera related information
@@ -80,6 +83,8 @@ def saving_image(key, mat):
         img = sl.ERROR_CODE.ERROR_CODE_FAILURE
         while img != sl.ERROR_CODE.SUCCESS:
             filepath = input("Enter filepath name: ")
+            # one potential problem here is that if the directory is not correct, it will still tell the user that the
+            # output is success
             img = mat.write(filepath)
             print("Saving image : {0}".format(repr(img)))
             if img == sl.ERROR_CODE.SUCCESS:
