@@ -614,7 +614,7 @@ abbr, acronym {
     cursor: help;
 }
 
-/* -- code displays --------------------------------------------------------- */
+/* -- code_example displays --------------------------------------------------------- */
 
 pre {
     overflow: auto;

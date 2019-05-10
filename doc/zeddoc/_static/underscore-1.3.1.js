@@ -574,7 +574,7 @@
   };
 
   // Returns the first function passed as an argument to the second,
-  // allowing you to adjust arguments, run code before and after, and
+  // allowing you to adjust arguments, run code_example before and after, and
   // conditionally execute the original function.
   _.wrap = function(func, wrapper) {
     return function() {
@@ -905,7 +905,7 @@
 
   // JavaScript micro-templating, similar to John Resig's implementation.
   // Underscore templating handles arbitrary delimiters, preserves whitespace,
-  // and correctly escapes quotes within interpolated code.
+  // and correctly escapes quotes within interpolated code_example.
   _.template = function(str, data) {
     var c  = _.templateSettings;
     var tmpl = 'var __p=[],print=function(){__p.push.apply(__p,arguments);};' +

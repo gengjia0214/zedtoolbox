@@ -19,8 +19,11 @@ def main():
         exit()
     # set up runtime parameters
     # this is for grab method, the param will determine what kind of information will be grabbed
+    # it will determine the amount of computation
     runtime = sl.RuntimeParameters()
-
+    # mat is a data structure for storing any output image data
+    # when.retrieve_image(mat) is called, the mat object will be loaded with the image data
+    # use mat.get_data() will return data that can be integrated by cv2
     mat = sl.Mat()
 
     key = ''
@@ -37,6 +40,7 @@ def main():
             key = cv2.waitKey(1)
     cv2.destroyAllWindows()
 
+    # print the camera related information
     print_camera_information(cam)
     saving_depth(cam)
     saving_point_cloud(cam)
