@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/sampler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="144" column="11" lean-forward="true" selection-start-line="144" selection-start-column="11" selection-end-line="144" selection-end-column="11" />
+            <state relative-caret-position="688">
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -74,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="427" />
     <option name="y" value="191" />
     <option name="width" value="1280" />
@@ -230,7 +230,7 @@
       <updated>1557444143934</updated>
       <workItem from="1557444144602" duration="7741000" />
       <workItem from="1557515082121" duration="783000" />
-      <workItem from="1557517260597" duration="12258000" />
+      <workItem from="1557517260597" duration="12857000" />
     </task>
     <task id="LOCAL-00006" summary="commented the example code on image output&#10;initialized the zed sampler">
       <created>1557452987744</created>
@@ -250,7 +250,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28282000" />
+    <option name="totallyTimeSpent" value="28881000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -433,8 +433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/sampler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="144" column="11" lean-forward="true" selection-start-line="144" selection-start-column="11" selection-end-line="144" selection-end-column="11" />
+        <state relative-caret-position="688">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

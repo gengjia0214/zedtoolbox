@@ -30,8 +30,8 @@ class Sampler:
         if not valid, the program would still think the output succeed.
         :param name: the name for the output files, do not provide .xxx
         :param path: the path for the output files. format /loc/to/put/
-        :param output_format: the format of the sample. By default format='image', it will save the sampled image into file.
-        format='numpy' will return
+        :param output_format: the format of the sample. By default format='image', it will save the sampled image into
+        file. format='numpy' will return
         :param depth: whether to output the depth measurement
         :param wait_time: the wait time for the cv2.waitkey() method, default is 1 ms. This setting would effect the
         fps of the replay. To be able to have time to review each frame and decide whether to sample, set up wait_time
@@ -155,6 +155,7 @@ class Sampler:
             print(repr(status))
         else:
             print("Camera successfully loaded\n")
+
 
 
 
