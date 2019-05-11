@@ -7,6 +7,8 @@ def main():
     Test
     :return: void
     """
+    test_manual_sampling_2()
+
     pass
 
 
@@ -35,7 +37,6 @@ def test_manual_sampling_2():
     # image size
     print(left[0].shape)
     # show image
-    cv2.imshow("fish", left[0])
     cv2.waitKey()
 
 
