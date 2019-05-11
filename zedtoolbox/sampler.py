@@ -6,7 +6,7 @@ class Sampler:
 
     def __init__(self, path, input_mode='default', resolution=sl.RESOLUTION.RESOLUTION_HD720, rectify=True, gray=False):
         """
-        The is the constructor for the image zedtoolbox
+        The is the constructor for the sampler
         :param path: the svo file path
         :param input_mode: key word for initial parameter setting. the 'default' is sl.InitParameters(svo_input_filename
         =self.path, svo_real_time_mode=False)
@@ -99,14 +99,12 @@ class Sampler:
                         d_name = name + '_depth'
                         self.__save_image(key, depth, d_name, path)
                 elif output_format == 'numpy':
-                    left_np, right_np = self.__output_numpy(key, left), self.__output_numpy(key, right)
-                    left_list.append(left_np)
-                    right_list.append(right_np)
+                    self.__output_numpy(key, left, left_list)
+                    self.__output_numpy(key, right, right_list)
                     if depth:
                         depth_mat = sl.Mat()
                         self.camera.retrieve_image(depth_mat, view=sl.VIEW.VIEW_DEPTH)
-                        depth_np = self.__output_numpy(key, depth_mat)
-                        depth_list.append(depth_np)
+                        self.__output_numpy(key, depth_mat, depth_list)
                 else:
                     print("\nInvalid format attribute. Format should be image or numpy")
             else:
@@ -138,17 +136,16 @@ class Sampler:
             mat.write(path)
 
     @staticmethod
-    def __output_numpy(key, mat):
+    def __output_numpy(key, mat, container):
         """
         Method to output the sample as numpy array
         :param key: sensor
         :param mat: the mat data
         :return: numpy array
         """
-        im_numpy = None
         if key == 115:
             im_numpy = mat.get_data()
-        return im_numpy
+            container.append(im_numpy)
 
     def __new_camera(self):
         """
