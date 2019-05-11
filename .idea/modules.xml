@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cv-zed-practice.iml" filepath="$PROJECT_DIR$/.idea/cv-zed-practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../zedtoolbox/.idea/zedtoolbox.iml" filepath="$PROJECT_DIR$/../zedtoolbox/.idea/zedtoolbox.iml" />
     </modules>
   </component>
 </project>
