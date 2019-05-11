@@ -22,6 +22,14 @@ class Sampler:
         self.gray = gray
         self.counter = 1
 
+    def get_camera_info(self):
+        # TODO: implement the get_camera_info() method - print/return the camera info
+        pass
+
+    def auto_sampling(self):
+        # TODO: implement the auto_sampling() method - sample the image per certain number of frame
+        pass
+
     def manual_sampling(self, name, path, output_format='image', depth=False, wait_time=1):
         """
         The method to manually sample the image using example code provided by zed. This method would interact with cv2
@@ -47,6 +55,7 @@ class Sampler:
         runtime = sl.RuntimeParameters()
         left = sl.Mat()
         right = sl.Mat()
+        depth_mat = None
         left_list = list()
         right_list = list()
         depth_list = list()
@@ -104,6 +113,13 @@ class Sampler:
                 key = cv2.waitKey(wait_time)
         cv2.destroyAllWindows()
         # release the mat and close the camera
+        left.free(memory_type=sl.MEM.MEM_CPU)
+        left.free(memory_type=sl.MEM.MEM_GPU)
+        right.free(memory_type=sl.MEM.MEM_CPU)
+        right.free(memory_type=sl.MEM.MEM_GPU)
+        if depth_mat is not None:
+            depth_mat.free(memory_type=sl.MEM.MEM_CPU)
+            depth_mat.free(memory_type=sl.MEM.MEM_GPU)
         self.camera.close()
         if output_format == 'numpy':
             return left_list, right_list, depth_list
