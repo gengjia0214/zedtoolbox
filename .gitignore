@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.idea
 env/
 build/
 develop-eggs/
@@ -32,7 +33,7 @@ array/
 video/
 code_example/
 doc/
-.idea/
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
