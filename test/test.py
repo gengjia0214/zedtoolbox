@@ -1,5 +1,6 @@
 from zedtoolbox.sampler import Sampler
 import cv2
+import numpy as np
 
 
 def main():
@@ -7,35 +8,34 @@ def main():
     Test
     :return: void
     """
-    test_manual_sampling_2()
-
-    pass
-
+    img1 = np.load('../output/array/yellow_depth0.npy')
+    cv2.imshow("image1", img1)
+    cv2.waitKey()
 
 def test_manual_sampling_1():
     """
     Test manual_sampling() on output image
     :return: void
     """
-    path = 'path/to/file'
-    s1 = Sampler(path)
+    path_to_file = 'path'
+    s1 = Sampler(path_to_file, depth=True)
+    s1.depth = True
+
     f_name = "yellow"
     path = 'path/to/output'
-    s1.manual_sampling(f_name, path, depth=True)
+    s1.manual_sampling(f_name, path)
 
 
 def test_manual_sampling_2():
     """
-    Test manual_sampling() on output np array
+    Test manual_sampling() on output np array as in
     :return: void
     """
-    path = 'path/to/file'
-    s1 = Sampler(path)
+    path_to_file = '/media/jgeng/hd1/CobiaSwimmingData/UMEH_111718/Cobia1-Yellow/Yellow.svo'
+    s1 = Sampler(path_to_file, depth=True)
     f_name = "yellow"
-    path = 'path/to/output'
-    left, right, depth = s1.manual_sampling(f_name, path, depth=True, output_format='numpy')
-    # image size
-    print(left[0].shape)
+    path_array = '/home/jgeng/Documents/Multi-Platform/JIA/Git/zedtoolbox/output/array/'
+    s1.manual_sampling(f_name, path_array, output_format='matrix_file')
     # show image
     cv2.waitKey()
 
