@@ -27,6 +27,8 @@ var/
 # Local Test Files
 output/
 test/
+image/
+array/
 video/
 code_example/
 doc/
