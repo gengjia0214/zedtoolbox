@@ -8,9 +8,8 @@ def main():
     Test
     :return: void
     """
-    img1 = np.load('../output/array/yellow_depth0.npy')
-    cv2.imshow("image1", img1)
-    cv2.waitKey()
+    pass
+
 
 def test_manual_sampling_1():
     """
