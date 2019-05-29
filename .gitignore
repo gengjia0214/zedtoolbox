@@ -25,6 +25,10 @@ var/
 .installed.cfg
 *.egg
 
+# xml
+.xml
+
+
 # Local Test Files
 output/
 test/
