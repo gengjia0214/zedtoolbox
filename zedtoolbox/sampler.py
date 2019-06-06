@@ -15,6 +15,7 @@ class Sampler:
         :param rectify: whether the sample need to be rectified
         :param gray: whether the sample need to be convert to gray scale
         """
+        self.resolution = sl.RESOLUTION.RESOLUTION_HD720
         self.input_mode = input_mode
         self.camera = sl.Camera()
         self.rectify = rectify
@@ -25,7 +26,7 @@ class Sampler:
         self.right_view = None
         self.set_view()
 
-    def grab_depth_by_timestamps(self, svo_path, out_path, timestamps, fram_rate=30, depth_mode='ultra')
+    def grab_depth_by_timestamps(self, svo_path, out_path, timestamps, video_id='', frame_rate=30, depth_mode='ultra'):
 
         # load svo file and configurations
         self.__new_camera()
@@ -34,9 +35,21 @@ class Sampler:
 
         left_mat = sl.Mat()
         depth_mat = sl.Mat()
+        frames = [int(i*frame_rate) for i in timestamps]
 
-
-
+        for frame, t in zip(frames, timestamps):
+            err = self.camera.grab(runtime)
+            if err == sl.ERROR_CODE.SUCCESS:
+                self.camera.set_svo_position(frame)
+                self.camera.retrieve_image(left_mat, view=self.left_view)
+                self.camera.retrieve_measure(depth_mat, measure=sl.MEASURE.MEASURE_DEPTH)
+                left_path = out_path + video_id + '#left_t=' + str(t) + '.png'
+                depth_path = out_path + video_id + '#depth_t=' + str(t)
+                left_mat.write(left_path)
+                print("left frame t =", t, "exported")
+                np.save(depth_path, depth_mat.get_data())
+                print("depth information t =", t, "exported")
+        print("All requested frames exported")
 
 
     def set_view(self):
