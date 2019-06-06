@@ -25,14 +25,18 @@ class Sampler:
         self.right_view = None
         self.set_view()
 
-    def grab_depth_by_timestamps(self, svo_path, out_path, timestamps, fram_rate=30)
+    def grab_depth_by_timestamps(self, svo_path, out_path, timestamps, fram_rate=30, depth_mode='ultra')
 
+        # load svo file and configurations
         self.__new_camera()
-        self.__open_camera(svo_path)
-
+        self.__open_camera(svo_path, depth_mode=depth_mode)
         runtime = sl.RuntimeParameters()
+
         left_mat = sl.Mat()
         depth_mat = sl.Mat()
+
+
+
 
 
     def set_view(self):
@@ -88,18 +92,8 @@ class Sampler:
             err = self.camera.grab(runtime)
             if err == sl.ERROR_CODE.SUCCESS:
                 # retrieve_image would put the data into the mat structures
-                if self.gray and self.rectify:
-                    self.camera.retrieve_image(left_mat, view=sl.VIEW.VIEW_LEFT_GRAY)
-                    self.camera.retrieve_image(right_mat, view=sl.VIEW.VIEW_RIGHT_GRAY)
-                elif self.gray and not self.rectify:
-                    self.camera.retrieve_image(left_mat, view=sl.VIEW.VIEW_LEFT_UNRECTIFIED_GRAY)
-                    self.camera.retrieve_image(right_mat, view=sl.VIEW.VIEW_RIGHT_UNRECTIFIED_GRAY)
-                elif not self.gray and self.rectify:
-                    self.camera.retrieve_image(left_mat, view=sl.VIEW.VIEW_LEFT)
-                    self.camera.retrieve_image(right_mat, view=sl.VIEW.VIEW_RIGHT)
-                elif not self.gray and not self.rectify:
-                    self.camera.retrieve_image(left_mat, view=sl.VIEW.VIEW_LEFT_UNRECTIFIED)
-                    self.camera.retrieve_image(right_mat, view=sl.VIEW.VIEW_RIGHT_UNRECTIFIED)
+                self.camera.retrieve_image(left_mat, view=self.left_view)
+                self.camera.retrieve_image(right_mat, view=self.right_view)
                 cv2.imshow("ZED-Left", left_mat.get_data())
                 key = cv2.waitKey(wait_time)
                 if output_format == 'image':
@@ -194,7 +188,7 @@ class Sampler:
         self.counter = 1
         print("\nCreated a new camera, counter reset.\n")
 
-    def __open_camera(self, svo_path):
+    def __open_camera(self, svo_path, depth_mode):
         """
         Method to open a
         :return: void
@@ -204,6 +198,14 @@ class Sampler:
             init.svo_input_filename = svo_path
             init.svo_real_time_mode = False
             init.camera_resolution = self.resolution
+            if depth_mode == 'performance':
+                init.depth_mode = sl.DEPTH_MODE.DEPTH_MODE_PERFORMANCE
+            if depth_mode == 'medium':
+                init.depth_mode = sl.DEPTH_MODE.DEPTH_MODE_MEDIUM
+            if depth_mode == 'quality':
+                init.depth_mode = sl.DEPTH_MODE.DEPTH_MODE_QUALITY
+            if depth_mode == 'ultra':
+                init.depth_mode = sl.DEPTH_MODE.DEPTH_MODE_ULTRA
 
         # TODO: other input mode e.g real time mode
         # create and open a camera
