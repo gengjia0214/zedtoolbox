@@ -5,8 +5,7 @@ import numpy as np
 
 class Sampler:
 
-    def __init__(self, path, input_mode='default', resolution=sl.RESOLUTION.RESOLUTION_HD720, rectify=True, gray=False,
-                 depth=False):
+    def __init__(self, input_mode='default', rectify=True, gray=False, depth=True):
         """
         The is the constructor for the sampler
         :param path: the svo file path
@@ -16,24 +15,41 @@ class Sampler:
         :param rectify: whether the sample need to be rectified
         :param gray: whether the sample need to be convert to gray scale
         """
-        self.path = path
         self.input_mode = input_mode
-        self.resolution = resolution
         self.camera = sl.Camera()
         self.rectify = rectify
         self.gray = gray
         self.counter = 1
         self.depth = depth
+        self.left_view = None
+        self.right_view = None
+        self.set_view()
 
-    def get_camera_info(self):
-        # TODO: implement the get_camera_info() method - print/return the camera info
-        pass
+    def grab_depth_by_timestamps(self, svo_path, out_path, timestamps, fram_rate=30)
 
-    def auto_sampling(self):
-        # TODO: implement the auto_sampling() method - sample the image per certain number of frame
-        pass
+        self.__new_camera()
+        self.__open_camera(svo_path)
 
-    def manual_sampling(self, name, path, output_format='image', wait_time=1):
+        runtime = sl.RuntimeParameters()
+        left_mat = sl.Mat()
+        depth_mat = sl.Mat()
+
+
+    def set_view(self):
+        if self.gray and self.rectify:
+            self.left_view = sl.VIEW.VIEW_LEFT_GRAY
+            self.right_view = sl.VIEW.VIEW_RIGHT_GRAY
+        elif self.gray and not self.rectify:
+            self.left_view = sl.VIEW.VIEW_LEFT_UNRECTIFIED_GRAY
+            self.right_view = sl.VIEW.VIEW_RIGHT_UNRECTIFIED_GRAY
+        elif not self.gray and self.rectify:
+            self.left_view = sl.VIEW.VIEW_LEFT
+            self.right_view = sl.VIEW.VIEW_RIGHT
+        elif not self.gray and not self.rectify:
+            self.left_view = sl.VIEW.VIEW_LEFT_UNRECTIFIED
+            self.right_view = sl.VIEW.VIEW_RIGHT_UNRECTIFIED
+
+    def manual_sampling(self, svo_path, name, path, output_format='image', wait_time=1):
         """
         The method to manually sample the image using example code provided by zed. This method would interact with cv2
         to display the image that grabbed by zed camera  The video replay would depend on the computation and the
@@ -52,7 +68,7 @@ class Sampler:
         """
         # reset camera and open camera
         self.__new_camera()
-        self.__open_camera()
+        self.__open_camera(svo_path)
 
         # set up the runtime params and the mat structure to hold the data
         runtime = sl.RuntimeParameters()
@@ -178,13 +194,15 @@ class Sampler:
         self.counter = 1
         print("\nCreated a new camera, counter reset.\n")
 
-    def __open_camera(self):
+    def __open_camera(self, svo_path):
         """
         Method to open a
         :return: void
         """
         if self.input_mode == 'default':
-            init = sl.InitParameters(svo_input_filename=self.path, svo_real_time_mode=False)
+            init = sl.InitParameters()
+            init.svo_input_filename = svo_path
+            init.svo_real_time_mode = False
             init.camera_resolution = self.resolution
 
         # TODO: other input mode e.g real time mode
