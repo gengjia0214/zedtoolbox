@@ -43,7 +43,7 @@ class Sampler:
         out[mask] = depth_array[mask]
         return out
 
-    def grab_depth_by_timestamps(self, svo_path, out_path, timestamps, video_id='', frame_rate=30, depth_mode='ultra'):
+    def get_depth_by_timestamps(self, svo_path, out_path, timestamps, video_id='', frame_rate=30, depth_mode='ultra'):
 
         # load svo file and configurations
         self.__new_camera()
@@ -55,9 +55,9 @@ class Sampler:
         frames = [int(i*frame_rate) for i in timestamps]
 
         for frame, t in zip(frames, timestamps):
+            self.camera.set_svo_position(frame)
             err = self.camera.grab(runtime)
             if err == sl.ERROR_CODE.SUCCESS:
-                self.camera.set_svo_position(frame)
                 self.camera.retrieve_image(left_mat, view=self.left_view)
                 self.camera.retrieve_measure(depth_mat, measure=sl.MEASURE.MEASURE_DEPTH)
                 left_path = out_path + video_id + '#left_t=' + str(t) + '.png'
@@ -67,7 +67,6 @@ class Sampler:
                 np.save(depth_path, depth_mat.get_data())
                 print("depth information t =", t, "exported")
         print("All requested frames exported")
-
 
     def set_view(self):
         if self.gray and self.rectify:

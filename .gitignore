@@ -38,6 +38,8 @@ video/
 code_example/
 doc/
 experiments/
+exp_output/
+test_output/
 
 
 # PyInstaller
