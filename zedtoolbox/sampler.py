@@ -26,6 +26,23 @@ class Sampler:
         self.right_view = None
         self.set_view()
 
+    @staticmethod
+    def get_bounding_box(depth_array, left, top, width, height):
+        x1 = int(left)
+        y1 = int(top)
+        x2 = x1 + int(width)
+        y2 = y1 + int(height)
+        return depth_array[x1:x2, y1:y2]
+
+    @staticmethod
+    def get_polygon(depth_array, points):
+        mask = np.zeros((depth_array.shape[0], depth_array.shape[1]))
+        cv2.fillConvexPoly(mask, points, 1)
+        mask = mask.astype(np.bool)
+        out = np.zeros_like(depth_array)
+        out[mask] = depth_array[mask]
+        return out
+
     def grab_depth_by_timestamps(self, svo_path, out_path, timestamps, video_id='', frame_rate=30, depth_mode='ultra'):
 
         # load svo file and configurations
