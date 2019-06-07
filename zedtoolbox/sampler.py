@@ -43,8 +43,15 @@ class Sampler:
         out[mask] = depth_array[mask]
         return out
 
-    def get_depth_by_timestamps(self, svo_path, out_path, timestamps, video_id='', frame_rate=30, depth_mode='ultra'):
-
+    def get_depth_all(self, svo_path, out_path, video_id='', depth_mode='ultra'):
+        """
+        Method to get the depth information of all frames of a svo file
+        :param svo_path: the path to the svo input file
+        :param out_path: the output dir
+        :param video_id: the video id for file name
+        :param depth_mode: the depth mode: performance, medium, quality, ultra
+        :return: void
+        """
         # load svo file and configurations
         self.__new_camera()
         self.__open_camera(svo_path, depth_mode=depth_mode)
@@ -52,7 +59,45 @@ class Sampler:
 
         left_mat = sl.Mat()
         depth_mat = sl.Mat()
-        frames = [int(i*frame_rate) for i in timestamps]
+        depth_img_mat = sl.Mat()
+        total_frames = self.camera.get_svo_number_of_frames()
+        for frame in range(1, total_frames + 1):
+            self.camera.set_svo_position(frame)
+            err = self.camera.grab(runtime)
+            if err == sl.ERROR_CODE.SUCCESS:
+                self.camera.retrieve_image(left_mat, view=self.left_view)
+                self.camera.retrieve_measure(depth_mat, measure=sl.MEASURE.MEASURE_DEPTH)
+                self.camera.retrieve_image(depth_img_mat, view=sl.VIEW.VIEW_DEPTH)
+                left_path = out_path + video_id + '#left_f=' + str(frame) + '.png'
+                depth_image_path = out_path + video_id + '#depth_f=' + str(frame) + '.png'
+                depth_path = out_path + video_id + '#depth_f=' + str(frame)
+                left_mat.write(left_path)
+                print("left frame =", frame, "of,", total_frames, "exported")
+                depth_img_mat.write(depth_image_path)
+                print("depth image frame =", frame, "of", total_frames, "exported")
+                np.save(depth_path, depth_mat.get_data())
+                print("depth array frame =", frame, "of", total_frames, "exported")
+        print("All requested frames exported")
+
+    def get_depth_by_timestamps(self, svo_path, out_path, timestamps, video_id='', frame_rate=30, depth_mode='ultra'):
+        """
+        Method to get depth with given timestamps
+        :param svo_path: the path for the input svo file
+        :param out_path:  the output path
+        :param timestamps: a list of timestamps
+        :param video_id: the video id for naming
+        :param frame_rate: frame rate of the video, frames = timestamps x frame_rate
+        :param depth_mode: depth mode: performance, medium, quality, ultra
+        :return: void
+        """
+        # load svo file and configurations
+        self.__new_camera()
+        self.__open_camera(svo_path, depth_mode=depth_mode)
+        runtime = sl.RuntimeParameters()
+
+        left_mat = sl.Mat()
+        depth_mat = sl.Mat()
+        frames = [int(i*frame_rate + 1) for i in timestamps]
 
         for frame, t in zip(frames, timestamps):
             self.camera.set_svo_position(frame)
@@ -63,12 +108,16 @@ class Sampler:
                 left_path = out_path + video_id + '#left_t=' + str(t) + '.png'
                 depth_path = out_path + video_id + '#depth_t=' + str(t)
                 left_mat.write(left_path)
-                print("left frame t =", t, "exported")
+                print("left frame t =", t, "frame = ", frame, "exported")
                 np.save(depth_path, depth_mat.get_data())
-                print("depth information t =", t, "exported")
+                print("depth information t =", t, "frame = ", frame, "exported")
         print("All requested frames exported")
 
     def set_view(self):
+        """
+        set the view for image retrieval
+        :return:
+        """
         if self.gray and self.rectify:
             self.left_view = sl.VIEW.VIEW_LEFT_GRAY
             self.right_view = sl.VIEW.VIEW_RIGHT_GRAY
